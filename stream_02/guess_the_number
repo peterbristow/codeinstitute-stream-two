@@ -1,0 +1,23 @@
+import random
+
+TOTAL_GUESSES = 10
+RAND_RANGE = 10
+
+while True:
+    # generate the random number
+    random_number = random.randint(0, RAND_RANGE)
+
+    # give the user a certain amount of guesses
+    for i in range(TOTAL_GUESSES):
+        guesses_left = TOTAL_GUESSES - i
+        print "You have %s guess(es) left." % guesses_left
+        guess = int(raw_input('guess the number between 0-10 inclusive: '))
+        if guess == random_number:
+            print 'well done'
+            continue
+        elif guess > random_number:
+            print "too high"
+        else:
+            print "too low"
+
+    print "sorry, you've had all your guesses, let's try a new number"
